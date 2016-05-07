@@ -1,5 +1,5 @@
+//U10416022
 import java.math.BigDecimal;
-
 public class Number {
 
 	void promote(int cal, String num1, String num2) {
@@ -25,5 +25,23 @@ public class Number {
 		}
 	}
 
+	void div(int scale, int cal, String num1, String num2) {
+
+		// new BigDecimal
+		BigDecimal number1 = new BigDecimal(num1);
+		BigDecimal number2 = new BigDecimal(num2);
+		// divide
+		if (cal == 4) {
+			if (scale < 0) {
+				System.out.println("The scale must be a positive integer or zero");
+
+			} else {
+				System.out.println(number1.divide(number2, scale, BigDecimal.ROUND_HALF_UP));
+			}
+
+		} else {
+			System.out.println("error");
+		}
+	}
 
 }
